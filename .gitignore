@@ -70,12 +70,8 @@ screenshots/
 # Docker
 *.pid
 
-# Deployment configs (private - only for maintainer)
+# Documentation 
 DEPLOYMENT.md
-Dockerfile
-railway.json
-render.yaml
-frontend/vercel.json
 
 # Secret/credential files
 *.pem

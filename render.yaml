@@ -1,0 +1,16 @@
+services:
+  - type: web
+    name: timetable-scheduler-api
+    runtime: docker
+    dockerfilePath: ./Dockerfile
+    dockerContext: .
+    plan: free
+    region: oregon
+    healthCheckPath: /actuator/health
+    envVars:
+      - key: PORT
+        value: 8080
+      - key: CORS_ORIGINS
+        sync: false  
+      - key: JAVA_OPTS
+        value: -Xmx512m -Xms256m
