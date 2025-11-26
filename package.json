@@ -1,0 +1,23 @@
+{
+  "name": "automated-timetable-scheduler",
+  "version": "1.0.0",
+  "description": "Automated Timetable Scheduler with Spring Boot backend and React frontend",
+  "scripts": {
+    "start": "./start.sh",
+    "backend": "mvn spring-boot:run",
+    "frontend": "cd frontend && npm start",
+    "install-frontend": "cd frontend && npm install",
+    "build-backend": "mvn clean package",
+    "build-frontend": "cd frontend && npm run build",
+    "build-all": "mvn clean package && cd frontend && npm run build"
+  },
+  "keywords": [
+    "timetable",
+    "scheduler",
+    "optaplanner",
+    "spring-boot",
+    "react"
+  ],
+  "author": "",
+  "license": "ISC"
+}
