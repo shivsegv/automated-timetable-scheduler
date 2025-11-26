@@ -1,0 +1,79 @@
+# Build artifacts
+target/
+frontend/build/
+*.jar
+*.war
+*.class
+
+# IDE - IntelliJ IDEA
+.idea/
+*.iml
+
+# IDE - VS Code
+.vscode/
+
+# IDE - Eclipse
+.project
+.classpath
+.settings/
+
+# Logs
+*.log
+backend.log
+logs/
+
+# Generated/Output files
+diff_output.txt
+
+# OS files
+.DS_Store
+Thumbs.db
+
+# Node.js (handled in frontend/.gitignore but added here for safety)
+node_modules/
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# Environment files
+.env
+.env.local
+.env.*.local
+
+# Development preview files
+CSV_MANAGER_PREVIEW.html
+
+# Resources folder (screenshots and duplicates)
+resources/
+
+# Screenshots and images
+screenshots/
+*.png
+*.jpg
+*.jpeg
+*.gif
+*.bmp
+*.svg
+!frontend/public/*.svg
+!frontend/src/**/*.svg
+
+# Miscellaneous
+
+# Temporary files
+*.tmp
+*.swp
+*~
+
+# Vercel
+.vercel
+
+# Docker
+*.pid
+
+# Deployment configs (private - only for maintainer)
+DEPLOYMENT.md
+Dockerfile
+railway.json
+frontend/vercel.json
+
+*.pid
