@@ -1,0 +1,345 @@
+/* CSV Visualization Styles */
+
+.csv-visualization {
+  background: var(--color-bg-primary);
+  border-radius: var(--radius-large);
+  box-shadow: var(--shadow-card);
+  overflow: hidden;
+  margin-top: var(--spacing-xl);
+}
+
+/* View Tabs */
+.view-tabs {
+  display: flex;
+  border-bottom: 2px solid var(--color-border);
+  background: var(--color-bg-secondary);
+}
+
+.view-tab {
+  padding: var(--spacing-md) var(--spacing-xl);
+  border: none;
+  background: none;
+  cursor: pointer;
+  font-size: var(--font-size-base);
+  font-weight: var(--font-weight-medium);
+  color: var(--color-text-secondary);
+  border-bottom: 3px solid transparent;
+  transition: all 0.3s ease;
+}
+
+.view-tab:hover {
+  color: var(--color-text-primary);
+  background: var(--color-bg-primary);
+}
+
+.view-tab.active {
+  color: var(--color-secondary);
+  background: var(--color-bg-primary);
+  border-bottom-color: var(--color-secondary);
+  font-weight: var(--font-weight-semibold);
+}
+
+/* Loading State */
+.viz-loading {
+  text-align: center;
+  padding: var(--spacing-2xl) var(--spacing-xl);
+}
+
+/* Metadata Card */
+.metadata-card {
+  padding: var(--spacing-xl);
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  color: white;
+  border-radius: 12px;
+  margin: 2rem;
+}
+
+.metadata-card h3 {
+  margin: 0 0 1.5rem 0;
+  font-size: 1.5rem;
+}
+
+.metadata-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 1.5rem;
+}
+
+.metadata-item {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.metadata-label {
+  font-size: 0.85rem;
+  opacity: 0.9;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.metadata-value {
+  font-size: 1.25rem;
+  font-weight: 600;
+}
+
+/* Overview Chart */
+.overview-chart {
+  padding: 2rem;
+}
+
+.overview-chart h3 {
+  margin: 0 0 1.5rem 0;
+  color: #2d3748;
+  font-size: 1.5rem;
+}
+
+.overview-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 1.5rem;
+}
+
+.overview-card {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  padding: 1.5rem;
+  background: linear-gradient(135deg, #f7fafc 0%, #edf2f7 100%);
+  border-radius: 12px;
+  border: 2px solid #e2e8f0;
+  transition: all 0.3s ease;
+}
+
+.overview-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
+  border-color: #667eea;
+}
+
+.overview-icon {
+  font-size: 2.5rem;
+  opacity: 0.8;
+}
+
+.overview-content {
+  flex: 1;
+}
+
+.overview-label {
+  font-size: 0.85rem;
+  color: #718096;
+  margin-bottom: 0.25rem;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.overview-value {
+  font-size: 2rem;
+  font-weight: 700;
+  color: #2d3748;
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+/* Statistics Section */
+.statistics-section {
+  padding: 2rem;
+  background: #f7fafc;
+}
+
+.statistics-section h3 {
+  margin: 0 0 1.5rem 0;
+  color: #2d3748;
+  font-size: 1.5rem;
+}
+
+.statistics-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  gap: 1.5rem;
+}
+
+.stat-card {
+  background: white;
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+  transition: all 0.3s ease;
+}
+
+.stat-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.12);
+}
+
+.stat-header {
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  padding: 1rem 1.5rem;
+  color: white;
+}
+
+.stat-column-name {
+  font-weight: 600;
+  font-size: 1.1rem;
+}
+
+.stat-body {
+  padding: 1.5rem;
+}
+
+.stat-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 1rem;
+}
+
+.stat-row:last-child {
+  margin-bottom: 0;
+}
+
+.stat-label {
+  color: #718096;
+  font-size: 0.9rem;
+}
+
+.stat-number {
+  font-weight: 600;
+  font-size: 1.25rem;
+  color: #2d3748;
+}
+
+/* Progress Bar */
+.progress-bar-container {
+  width: 100%;
+  height: 28px;
+  background: #e2e8f0;
+  border-radius: 14px;
+  overflow: hidden;
+  position: relative;
+}
+
+.progress-bar-fill {
+  height: 100%;
+  background: linear-gradient(90deg, #48bb78 0%, #38a169 100%);
+  border-radius: 14px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: width 0.6s ease;
+  min-width: 45px;
+}
+
+.progress-text {
+  color: white;
+  font-size: 0.85rem;
+  font-weight: 600;
+}
+
+/* Data Distribution */
+.distribution-chart {
+  padding: 2rem;
+  background: white;
+}
+
+.distribution-chart h3 {
+  margin: 0 0 1.5rem 0;
+  color: #2d3748;
+  font-size: 1.5rem;
+}
+
+.distribution-bars {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.distribution-bar-item {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.distribution-label {
+  min-width: 150px;
+  font-weight: 600;
+  color: #2d3748;
+}
+
+.distribution-bar-wrapper {
+  flex: 1;
+  height: 40px;
+  background: #e2e8f0;
+  border-radius: 20px;
+  overflow: hidden;
+  position: relative;
+}
+
+.distribution-bar {
+  height: 100%;
+  background: linear-gradient(90deg, #667eea 0%, #764ba2 100%);
+  border-radius: 20px;
+  display: flex;
+  align-items: center;
+  padding: 0 1rem;
+  transition: width 0.6s ease;
+  min-width: 60px;
+}
+
+.distribution-value {
+  color: white;
+  font-weight: 600;
+  font-size: 0.9rem;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .view-tabs {
+    overflow-x: auto;
+  }
+
+  .view-tab {
+    padding: 0.75rem 1rem;
+    font-size: 0.9rem;
+  }
+
+  .metadata-grid,
+  .overview-grid,
+  .statistics-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .overview-value {
+    font-size: 1.5rem;
+  }
+
+  .distribution-bar-item {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .distribution-label {
+    min-width: unset;
+  }
+}
+
+/* Animations */
+@keyframes slideDown {
+  from {
+    opacity: 0;
+    transform: translateY(-20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.table-view,
+.stats-view,
+.charts-view {
+  animation: slideDown 0.3s ease-out;
+}
