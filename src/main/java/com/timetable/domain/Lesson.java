@@ -26,7 +26,8 @@ public class Lesson {
 //    @PlanningVariable(valueRangeProviderRefs = "facultyRange")
     private Faculty faculty;
 
-    private Room room; // Room for the lesson, currently not managed as a PlanningVariable
+    @PlanningVariable(valueRangeProviderRefs = "roomRange")
+    private Room room;
 
     @PlanningVariable(valueRangeProviderRefs = "timeSlotRange")
     private TimeSlot timeSlot;
@@ -72,9 +73,7 @@ public class Lesson {
 
     public Room getRoom() { return room; }
     public void setRoom(Room room) {
-        if (this.room == null) {
-            this.room = room;
-        }
+        this.room = room;
     }
 
     public TimeSlot getTimeSlot() { return timeSlot; }
