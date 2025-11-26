@@ -74,6 +74,23 @@ screenshots/
 DEPLOYMENT.md
 Dockerfile
 railway.json
+render.yaml
 frontend/vercel.json
+
+# Secret/credential files
+*.pem
+*.key
+*.p12
+*.pfx
+*.crt
+*.cer
+*credentials*
+*secrets*
+.secrets
+*.secret
+
+# API keys and tokens
+.api_key
+.token
 
 *.pid
