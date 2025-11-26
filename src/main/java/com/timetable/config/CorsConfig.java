@@ -8,8 +8,6 @@ import org.springframework.web.cors.UrlBasedCorsConfigurationSource;
 import org.springframework.web.filter.CorsFilter;
 
 import java.util.Arrays;
-import java.util.List;
-import java.util.stream.Collectors;
 
 @Configuration
 public class CorsConfig {
@@ -19,16 +17,26 @@ public class CorsConfig {
 
     @Bean
     public CorsFilter corsFilter() {
-        List<String> origins = Arrays.stream(allowedOrigins.split(","))
-                .map(String::trim)
-                .collect(Collectors.toList());
-        
         CorsConfiguration config = new CorsConfiguration();
-        config.setAllowedOrigins(origins);
-        config.setAllowedMethods(Arrays.asList("GET", "POST", "PUT", "DELETE", "OPTIONS", "HEAD"));
-        config.setAllowedHeaders(Arrays.asList("*"));
-        config.setExposedHeaders(Arrays.asList("*"));
+        
+        // Add each origin
+        Arrays.stream(allowedOrigins.split(","))
+                .map(String::trim)
+                .forEach(config::addAllowedOrigin);
+        
+        // Allow all common methods
+        config.addAllowedMethod("*");
+        
+        // Allow all headers
+        config.addAllowedHeader("*");
+        
+        // Expose all headers
+        config.addExposedHeader("*");
+        
+        // Allow credentials
         config.setAllowCredentials(true);
+        
+        // Cache preflight for 1 hour
         config.setMaxAge(3600L);
 
         UrlBasedCorsConfigurationSource source = new UrlBasedCorsConfigurationSource();
